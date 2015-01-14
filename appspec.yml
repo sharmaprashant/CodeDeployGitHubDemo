@@ -4,19 +4,15 @@ files:
   - source: /
     destination: /usr/share/nginx/html/CodeDeployGitHubDemo
 hooks:
-  BeforeInstall:
-    - location: CodeDeployGitHubDemo/install_dependencies.sh
-      timeout: 300
-      runas: root
   AfterInstall:
-    - location: CodeDeployGitHubDemo/change_permissions.sh
+    - location: script/change_permissions.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: CodeDeployGitHubDemo/start_server.sh
+    - location: script/start_server.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: CodeDeployGitHubDemo/stop_server.sh
+    - location: script/stop_server.sh
       timeout: 300
       runas: root
