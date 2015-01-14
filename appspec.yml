@@ -5,9 +5,9 @@ files:
     destination: /usr/share/nginx/html/CodeDeployGitHubDemo
 hooks:
   BeforeInstall:
-  - location: script/cleanupfiles.sh
-    timeout: 300
-    runas: root
+    - location: script/cleanupfiles.sh
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: script/change_permissions.sh
       timeout: 300
